@@ -1,0 +1,15 @@
+#!/usr/bin/python
+import os,sys
+readTemplate('/home/oracle/Oracle/Middleware/Oracle_Home/wlserver/common/templates/wls/wls.jar')
+cd('Servers/AdminServer')
+set('ListenAddress','192.168.0.113')
+set('ListenPort',7001)
+cd('/')
+cd('/Security/base_domain/User/weblogic')
+cmo.setPassword('weblogic123')
+setOption('DomainName','base_domain')
+setOption('OverwriteDomain','true')
+setOption('ServerStartMode','prod')
+writeDomain('/home/oracle/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain')
+closeTemplate()
+exit()
